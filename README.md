@@ -40,7 +40,7 @@ Claude Code で、次の 2 つを別々に送ります。
 
 ```
 skills/workloop/
-└── SKILL.md         業務の構成と置き場所、役割と委任、権限、手順 1〜12、
+└── SKILL.md         ディレクトリ構成、役割と委任、権限、手順 1〜12、
                      Issue・PR、検証と確認、作業のログ、マージ
 agents/              サブエージェント execution・verification・confirmation
 ```
