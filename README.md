@@ -40,21 +40,24 @@ Claude Code で、次の 2 つを別々に送ります。
 
 ```
 skills/workloop/
-└── SKILL.md         ディレクトリ構成、役割と委任、権限、手順 1〜12、
-                     Issue・PR、検証と確認、作業のログ、マージ
+├── SKILL.md         ディレクトリ構成、役割と委任、権限、手順 1〜12、
+│                    Issue・PR、検証と確認、作業のログ、マージ
+└── template/        ひな形
+    ├── log.md           作業のログ
+    ├── issue.md         Issue
+    └── pull_request.md  PR
 agents/              サブエージェント execution・verification・confirmation
 ```
 
 サブエージェントは決まりを持たず、`workloop` を読み込んで対応する節に従います。
 
-## 作業対象リポジトリ側に必要なもの
+## 作業対象リポジトリ側に置くとよいもの
 
-スキルは、作業対象リポジトリにある次の文書・ファイルを参照します。
+スキルは、作業対象リポジトリにある `specification/work/` の「レビュー項目の例」を参照します。なくても動きます。
 
-- `specification/work/` の「時間の記録」「レビュー項目の例」
-- `specification/work/実施/エージェント設定.md`
-- `.github/` の Issue・PR テンプレート
-- `specification/work/道具/` の、ログのひな形などの道具とその使い方
+### Issue・PR のテンプレート（任意）
+
+テンプレートがなくても、スキルの `template/` のひな形で Issue と PR を書きます。`template/issue.md` を `.github/ISSUE_TEMPLATE/作業.md` に、`template/pull_request.md` を `.github/pull_request_template.md` にコピーすると、人が GitHub の画面から作る Issue・PR も同じ形になります。テンプレートに独自の項目を足すと、AI もその項目を埋めます。
 
 ## 更新の配り方
 

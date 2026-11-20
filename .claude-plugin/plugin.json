@@ -1,6 +1,6 @@
 {
   "name": "workloop",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "計画・仕様・実装で構成する業務と、定義から完了処理までの作業の進め方をエージェントに守らせるスキル集。",
   "author": {
     "name": "asaty94",
