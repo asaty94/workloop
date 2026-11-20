@@ -1,0 +1,16 @@
+{
+  "name": "workloop",
+  "description": "業務を円滑に進めるための workloop プラグインの配布元。",
+  "owner": {
+    "name": "asaty94",
+    "url": "https://github.com/asaty94"
+  },
+  "plugins": [
+    {
+      "name": "workloop",
+      "description": "業務の構成と作業の進め方（定義・実行・検証・確認・レビュー・完了処理）のスキル集。",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
