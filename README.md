@@ -1,6 +1,6 @@
 # workloop
 
-計画・仕様・実装・検証で構成する業務と、定義から完了処理までの作業の進め方を、Claude Code に守らせるプラグインです。
+計画・仕様・実装で構成する業務と、定義から完了処理までの作業の進め方を、Claude Code に守らせるプラグインです。
 
 ## インストール
 
@@ -36,20 +36,16 @@ Claude Code で、次の 2 つを別々に送ります。
 
 ## 中身
 
-| スキル | 使う場面 |
-|---|---|
-| `workflow` | リポジトリのファイルを変える依頼を受けたとき（入口） |
-| `layout` | 業務の構成と、plan/・specification/・verification/・work/ の置き場所 |
-| `issue-pr` | Issue・PR・レビュー項目の書き方、計画との紐付け |
-| `execution` | 実装・調査（実行エージェント、または main） |
-| `verification` | 検証（検証エージェント、または main） |
-| `confirmation` | 確認（確認エージェント、または main） |
-| `merge` | 担当者が対象 PR のマージを明示的に指示したとき |
-| `work-log` | 作業のログ |
+スキルは `workloop` の 1 つです。リポジトリのファイルを変える依頼で自動的に使われ、`/workloop:workloop` で呼び出すこともできます。
 
-サブエージェント `execution`・`verification`・`confirmation` は、対応するスキルを読み込んで動きます。
+```
+skills/workloop/
+└── SKILL.md         業務の構成と置き場所、役割と委任、権限、手順 1〜12、
+                     Issue・PR、検証と確認、作業のログ、マージ
+agents/              サブエージェント execution・verification・confirmation
+```
 
-スキルは `/workloop:workflow` のように呼び出せます。内容に合う作業では Claude が自動で使います。
+サブエージェントは決まりを持たず、`workloop` を読み込んで対応する節に従います。
 
 ## 作業対象リポジトリ側に必要なもの
 
