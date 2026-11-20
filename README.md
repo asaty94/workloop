@@ -40,19 +40,14 @@ Claude Code で、次の 2 つを別々に送ります。
 
 ```
 skills/workflow/
-├── SKILL.md            手順 1〜12、役割と委任、権限（毎回読む）
-└── references/         該当する手順に来たときに読む
-    ├── layout.md       業務の構成とファイルの置き場所
-    ├── issue-pr.md     Issue・PR・レビュー項目の書き方、計画との紐付け
-    ├── execution.md    実行（手順 4）
-    ├── verification.md 検証（手順 5）
-    ├── confirmation.md 確認（手順 7）
-    ├── work-log.md     作業のログ
-    └── merge.md        マージ（手順 12）
-agents/                 サブエージェント execution・verification・confirmation
+├── SKILL.md         業務の構成と置き場所、役割と委任、権限、手順 1〜12、
+│                    Issue・PR、検証と確認、作業のログ
+└── references/
+    └── merge.md     マージ（担当者が明示的に指示したときだけ読む）
+agents/              サブエージェント execution・verification・confirmation
 ```
 
-サブエージェントは決まりを持たず、`workflow` を読み込んで対応する参照ファイルに従います。
+サブエージェントは決まりを持たず、`workflow` を読み込んで対応する節に従います。
 
 ## 作業対象リポジトリ側に必要なもの
 
