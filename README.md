@@ -51,10 +51,10 @@ agents/              サブエージェント execution・verification・confirm
 
 スキルは、作業対象リポジトリにある次の文書・ファイルを参照します。
 
-- `specification/業務/` の「時間の記録」「レビュー項目の例」
-- `specification/業務/実施/エージェント設定.md`
+- `specification/work/` の「時間の記録」「レビュー項目の例」
+- `specification/work/実施/エージェント設定.md`
 - `.github/` の Issue・PR テンプレート
-- `specification/業務/道具/` の、ログのひな形などの道具とその使い方
+- `specification/work/道具/` の、ログのひな形などの道具とその使い方
 
 ## 更新の配り方
 
