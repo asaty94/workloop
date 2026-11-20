@@ -52,9 +52,44 @@ agents/              サブエージェント execution・verification・confirm
 スキルは、作業対象リポジトリにある次の文書・ファイルを参照します。
 
 - `specification/work/` の「時間の記録」「レビュー項目の例」
-- `specification/work/実施/エージェント設定.md`
-- `.github/` の Issue・PR テンプレート
 - `specification/work/道具/` の、ログのひな形などの道具とその使い方
+
+### Issue・PR のテンプレート（任意）
+
+テンプレートがなくても、スキルが決めた項目で Issue と PR を書きます。`.github/` に同じ見出しのテンプレートを置くと、人が GitHub の画面から作る Issue・PR も同じ形になります。テンプレートに独自の項目を足すと、AI もその項目を埋めます。
+
+`.github/ISSUE_TEMPLATE/作業.md`
+
+```markdown
+---
+name: 作業
+about: 作業の目的と完了条件
+---
+
+## 概要
+
+<!-- 目的と背景 -->
+
+## 要件
+
+- [ ] <!-- 完了を判定できる条件 -->
+```
+
+`.github/pull_request_template.md`
+
+```markdown
+## 背景
+
+<!-- なぜ変更が必要か。Closes #番号 / Refs #番号 -->
+
+## 変更
+
+<!-- 何を変え、どう確かめたか -->
+
+## レビュー項目
+
+<!-- 人の判断・情報・権限が必要なことと、未達の要件。なければ「なし」 -->
+```
 
 ## 更新の配り方
 
