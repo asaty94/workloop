@@ -36,16 +36,16 @@ Claude Code で、次の 2 つを別々に送ります。
 
 ## 中身
 
-スキルは `workflow` の 1 つです。リポジトリのファイルを変える依頼で自動的に使われ、`/workloop:workflow` で呼び出すこともできます。
+スキルは `workloop` の 1 つです。リポジトリのファイルを変える依頼で自動的に使われ、`/workloop:workloop` で呼び出すこともできます。
 
 ```
-skills/workflow/
+skills/workloop/
 └── SKILL.md         業務の構成と置き場所、役割と委任、権限、手順 1〜12、
                      Issue・PR、検証と確認、作業のログ、マージ
 agents/              サブエージェント execution・verification・confirmation
 ```
 
-サブエージェントは決まりを持たず、`workflow` を読み込んで対応する節に従います。
+サブエージェントは決まりを持たず、`workloop` を読み込んで対応する節に従います。
 
 ## 作業対象リポジトリ側に必要なもの
 
