@@ -40,56 +40,24 @@ Claude Code で、次の 2 つを別々に送ります。
 
 ```
 skills/workloop/
-└── SKILL.md         ディレクトリ構成、役割と委任、権限、手順 1〜12、
-                     Issue・PR、検証と確認、作業のログ、マージ
+├── SKILL.md         ディレクトリ構成、役割と委任、権限、手順 1〜12、
+│                    Issue・PR、検証と確認、作業のログ、マージ
+└── template/        ひな形
+    ├── log.md           作業のログ
+    ├── issue.md         Issue
+    └── pull_request.md  PR
 agents/              サブエージェント execution・verification・confirmation
 ```
 
 サブエージェントは決まりを持たず、`workloop` を読み込んで対応する節に従います。
 
-## 作業対象リポジトリ側に必要なもの
+## 作業対象リポジトリ側に置くとよいもの
 
-スキルは、作業対象リポジトリにある次の文書・ファイルを参照します。
-
-- `specification/work/` の「時間の記録」「レビュー項目の例」
-- `specification/work/道具/` の、ログのひな形などの道具とその使い方
+スキルは、作業対象リポジトリにある `specification/work/` の「レビュー項目の例」を参照します。なくても動きます。
 
 ### Issue・PR のテンプレート（任意）
 
-テンプレートがなくても、スキルが決めた項目で Issue と PR を書きます。`.github/` に同じ見出しのテンプレートを置くと、人が GitHub の画面から作る Issue・PR も同じ形になります。テンプレートに独自の項目を足すと、AI もその項目を埋めます。
-
-`.github/ISSUE_TEMPLATE/作業.md`
-
-```markdown
----
-name: 作業
-about: 作業の目的と完了条件
----
-
-## 概要
-
-<!-- 目的と背景 -->
-
-## 要件
-
-- [ ] <!-- 完了を判定できる条件 -->
-```
-
-`.github/pull_request_template.md`
-
-```markdown
-## 背景
-
-<!-- なぜ変更が必要か。Closes #番号 / Refs #番号 -->
-
-## 変更
-
-<!-- 何を変え、どう確かめたか -->
-
-## レビュー項目
-
-<!-- 人の判断・情報・権限が必要なことと、未達の要件。なければ「なし」 -->
-```
+テンプレートがなくても、スキルの `template/` のひな形で Issue と PR を書きます。`template/issue.md` を `.github/ISSUE_TEMPLATE/作業.md` に、`template/pull_request.md` を `.github/pull_request_template.md` にコピーすると、人が GitHub の画面から作る Issue・PR も同じ形になります。テンプレートに独自の項目を足すと、AI もその項目を埋めます。
 
 ## 更新の配り方
 
