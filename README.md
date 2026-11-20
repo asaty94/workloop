@@ -40,7 +40,7 @@ Claude Code で、次の 2 つを別々に送ります。
 
 ```
 skills/workloop/
-└── SKILL.md         業務の構成と置き場所、役割と委任、権限、手順 1〜12、
+└── SKILL.md         ディレクトリ構成、役割と委任、権限、手順 1〜12、
                      Issue・PR、検証と確認、作業のログ、マージ
 agents/              サブエージェント execution・verification・confirmation
 ```
@@ -51,10 +51,10 @@ agents/              サブエージェント execution・verification・confirm
 
 スキルは、作業対象リポジトリにある次の文書・ファイルを参照します。
 
-- `specification/業務/` の「振り返りのタイミング」「業務の改善方法」「時間の記録」「レビュー項目の例」「利用手順」
-- `specification/業務/実施/エージェント設定.md`
+- `specification/work/` の「時間の記録」「レビュー項目の例」
+- `specification/work/実施/エージェント設定.md`
 - `.github/` の Issue・PR テンプレート
-- `work/実施/templates/log.md`、`work/実施/tools/work_log.py`
+- `specification/work/道具/` の、ログのひな形などの道具とその使い方
 
 ## 更新の配り方
 
