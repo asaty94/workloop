@@ -60,7 +60,9 @@ scripts/             プラグインの改善に使う情報の収集（作業�
 
 ### Issue・PR のテンプレート（任意）
 
-テンプレートがなくても、スキルの `template/` のひな形で Issue と PR を書きます。`template/issue.md` を `.github/ISSUE_TEMPLATE/作業.md` に、`template/pull_request.md` を `.github/pull_request_template.md` にコピーすると、人が GitHub の画面から作る Issue・PR も同じ形になります。テンプレートに独自の項目を足すと、AI もその項目を埋めます。
+AI は、スキルの `template/` のひな形で Issue と PR を書きます。スキルは、作業対象リポジトリの `.github/` のテンプレートを参照しません。人が GitHub の画面から作る Issue・PR も同じ形にしたいときは、`template/issue.md` を `.github/ISSUE_TEMPLATE/作業.md` に、`template/pull_request.md` を `.github/pull_request_template.md` にコピーします。
+
+リポジトリ独自の項目を Issue・PR に書かせたいときは、そのリポジトリの `CLAUDE.md` に書きます。
 
 ## 改善のための情報収集
 
