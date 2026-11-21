@@ -24,7 +24,8 @@ check_common() { # $1: 本文のファイル, $2: ひな形
     grep -qxF "$h" "$body" || err "見出しがない: $h"
   done < <(grep '^## ' "$template")
   local l empty
-  while IFS= read -r l; do err "${l%%:*} 行目: ひな形のコメントが残っている"; done < <(grep -n '<!--' "$body" || true)
+  # `<!-- -->` のようにコードとして書いたものは除く
+  while IFS= read -r l; do err "$l 行目: ひな形のコメントが残っている"; done < <(awk '{ l = $0; gsub(/`[^`]*`/, "", l) } l ~ /<!--/ { print NR }' "$body")
   while IFS= read -r l; do err "${l%%:*} 行目: 空の箇条書き"; done < <(grep -nE '^[[:space:]]*- (\[[ xX]\] )?[[:space:]]*$' "$body" || true)
   empty=$(awk '
     /^## / { if (h != "" && !filled) print h; h = $0; filled = 0; next }
