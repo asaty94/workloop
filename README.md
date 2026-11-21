@@ -47,6 +47,7 @@ skills/workloop/
     ├── issue.md         Issue
     └── pull_request.md  PR
 agents/              サブエージェント execution・verification・confirmation
+scripts/             プラグインの改善に使う情報の収集（作業対象リポジトリには不要）
 ```
 
 サブエージェントは決まりを持たず、`workloop` を読み込んで対応する節に従います。
@@ -58,6 +59,18 @@ agents/              サブエージェント execution・verification・confirm
 ### Issue・PR のテンプレート（任意）
 
 テンプレートがなくても、スキルの `template/` のひな形で Issue と PR を書きます。`template/issue.md` を `.github/ISSUE_TEMPLATE/作業.md` に、`template/pull_request.md` を `.github/pull_request_template.md` にコピーすると、人が GitHub の画面から作る Issue・PR も同じ形になります。テンプレートに独自の項目を足すと、AI もその項目を埋めます。
+
+## 改善のための情報収集
+
+作業のログ（`work/log/*.md`）には、使ったプラグインの版と「workloop への気づき」の欄があります。`scripts/collect-feedback.sh` は、この欄を各リポジトリから集めて Markdown で出力します。
+
+```sh
+scripts/collect-feedback.sh > /tmp/workloop-feedback.md                     # 自動で探す
+scripts/collect-feedback.sh owner/repo-a owner/repo-b > /tmp/workloop-feedback.md   # 指定する
+```
+
+- リポジトリを指定しないときは、GitHub のコード検索で `.claude/settings.json` に `workloop@workloop` があるリポジトリを探します。対象は、`gh` の認証で見えるリポジトリのうち、検索の索引に入っているものだけです。`.claude/settings.json` を置かずに使っているリポジトリは見つからないので、指定してください。
+- 出力には業務の内容が混じることがあります。このリポジトリは公開されているので、出力はコミットせず、内容を確かめて必要なことだけを Issue にしてください。
 
 ## 更新の配り方
 
