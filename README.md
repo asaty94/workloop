@@ -42,10 +42,12 @@ Claude Code で、次の 2 つを別々に送ります。
 skills/workloop/
 ├── SKILL.md         ディレクトリ構成、役割と委任、権限、手順 1〜12、
 │                    Issue・PR、検証と確認、作業のログ、マージ
-└── template/        ひな形
-    ├── log.md           作業のログ
-    ├── issue.md         Issue
-    └── pull_request.md  PR
+├── template/        ひな形
+│   ├── log.md           作業のログ
+│   ├── issue.md         Issue
+│   └── pull_request.md  PR
+└── scripts/
+    └── check.sh     ログ・PR・Issue の形式の確認と、時間の記録の計算
 agents/              サブエージェント execution・verification・confirmation
 scripts/             プラグインの改善に使う情報の収集（作業対象リポジトリには不要）
 ```
